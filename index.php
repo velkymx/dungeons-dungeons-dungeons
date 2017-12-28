@@ -6,12 +6,12 @@ if (!isset($_SESSION)) {
 
 $_SESSION['info'] = array(
 
-  'character' => array(
-    'name' => 'Sir John',
-    'class' => 'Fighter',
-    'race' => 'Human',
-    'level' => 1,
-    'experience' => 0
+  'Character' => array(
+    'Name' => 'Sir John',
+    'Class' => 'Fighter',
+    'Race' => 'Human',
+    'Level' => 1,
+    'Experience' => 0
   ),
   'stats' => array(
     'str' => 3,
@@ -361,8 +361,41 @@ function chamber()
     return array('none'=>'Chamber Details');
 };
 
+function room_shape($int = rand[0,19]){
+  $data = array(
+    array('none','Square, 10ft x 10ft'),
+    array('none','Square, 10ft x 10ft'),
+    array('none','Square, 20ft x 20ft'),
+    array('none','Square, 20ft x 20ft'),
+    array('none','Square, 30ft x 30ft'),
+    array('none','Square, 30ft x 30ft'),
+    array('none','Square, 40ft x 40ft'),
+    array('none','Square, 40ft x 40ft'),
+    array('none','Rectangular, 10ft x 20ft'),
+    array('none','Rectangular, 10ft x 20ft'),
+    array('none','Rectangular, 20ft x 30ft'),
+    array('none','Rectangular, 20ft x 30ft'),
+    array('none','Rectangular, 20ft x 40ft'),
+    array('none','Rectangular, 20ft x 40ft'),
+    array('none','Rectangular, 30ft x 40ft'),
+    array('none','Rectangular, 30ft x 40ft'),
+    array('unusual_shape','The room is an unusual shape.'),
+    array('unusual_shape','The room is an unusual shape.'),
+    array('unusual_shape','The room is an unusual shape.'),
+  );
+
+  return $data[$int];
+}
+
+
+
 function room()
 {
+  $size = room_shape();
+  if(key($size) == 'unusual_shape'){
+    $size = unusual_shape();
+  }
+
     return array('none'=>'Room Details');
 };
 

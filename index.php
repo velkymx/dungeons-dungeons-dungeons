@@ -361,7 +361,8 @@ function chamber()
     return array('none'=>'Chamber Details');
 };
 
-function room_shape($int = rand[0,19]){
+function room_shape(){
+  $int = rand(0,19);
   $data = array(
     array('none','Square, 10ft x 10ft'),
     array('none','Square, 10ft x 10ft'),
@@ -387,7 +388,61 @@ function room_shape($int = rand[0,19]){
   return $data[$int];
 }
 
+ function unusual_shape()
+{
+    $size = array(
+      array('none'=>'about 500 sqft'),
+      array('none'=>'about 500 sqft'),
+      array('none'=>'about 500 sqft'),
+      array('none'=>'about 900 sqft'),
+      array('none'=>'about 900 sqft'),
+      array('none'=>'about 900 sqft'),
+      array('none'=>'about 1500 sqft'),
+      array('none'=>'about 1500 sqft'),
+      array('none'=>'about 1500 sqft'),
+      array('none'=>'about 2000 sqft'),
+      array('none'=>'about 2000 sqft'),
+      array('none'=>'about 2000 sqft'),
+      array('none'=>'about 2700 sqft'),
+      array('none'=>'about 2700 sqft'),
+      array('none'=>'about 2700 sqft'),
+      array('none'=>'about 3400 sqft'),
+      array('none'=>'about 3400 sqft'),
+      array('none'=>'about 3400 sqft'),
+      array('none'=>rand(2000,3400).' sqft'),
+      array('none'=>rand(2000,3400).' sqft'),
+      array('none'=>rand(2000,3400).' sqft'),
+      array('none'=>rand(2000,3400).' sqft'),
+      array('none'=>rand(2000,3400).' sqft'),
 
+    );
+
+    $shape = array(
+      array('none'=>'Circular'),
+      array('none'=>'Circular'),
+      array('none'=>'Circular'),
+      array('none'=>'Circular'),
+      array('none'=>'Circular'),
+      array('none'=>'Triangular'),
+      array('none'=>'Triangular'),
+      array('none'=>'Triangular'),
+      array('none'=>'Trapezoidal'),
+      array('none'=>'Trapezoidal'),
+      array('none'=>'Trapezoidal'),
+      array('none'=>'Odd-shaped'),
+      array('none'=>'Odd-shaped'),
+      array('none'=>'Oval'),
+      array('none'=>'Oval'),
+      array('none'=>'Hexagonal'),
+      array('none'=>'Hexagonal'),
+      array('none'=>'Octagonal'),
+      array('none'=>'Octagonal'),
+      array('none'=>'Cave'),
+
+    );
+
+    return array('none'=>'This room is '.current($shape[rand(0,19)]).' about '.current($size[rand(0,19)]));
+}
 
 function room()
 {
@@ -396,7 +451,7 @@ function room()
     $size = unusual_shape();
   }
 
-    return array('none'=>'Room Details');
+    return $size;
 };
 
 function traps()

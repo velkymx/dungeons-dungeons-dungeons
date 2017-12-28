@@ -362,7 +362,7 @@ function chamber()
 };
 
 function room_shape(){
-  $int = rand(0,19);
+
   $data = array(
     array('none','Square, 10ft x 10ft'),
     array('none','Square, 10ft x 10ft'),
@@ -385,7 +385,7 @@ function room_shape(){
     array('unusual_shape','The room is an unusual shape.'),
   );
 
-  return $data[$int];
+  return $data[rand(0,19)];
 }
 
  function unusual_shape()

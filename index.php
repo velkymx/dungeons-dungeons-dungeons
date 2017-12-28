@@ -70,9 +70,9 @@ function encounter()
     array('passage_turns'=>'Passage Turns'),
     array('passage_turns'=>'Passage Turns'),
 
-    array('chamber'=>'Chamber'),
-    array('chamber'=>'Chamber'),
-    array('chamber'=>'Chamber'),
+    array('room'=>'Chamber'),
+    array('room'=>'Chamber'),
+    array('room'=>'Chamber'),
 
     array('stairs'=>'Stairs'),
     array('secret_doors'=>'Dead End'),
@@ -364,25 +364,25 @@ function chamber()
 function room_shape(){
 
   $data = array(
-    array('none','Square, 10ft x 10ft'),
-    array('none','Square, 10ft x 10ft'),
-    array('none','Square, 20ft x 20ft'),
-    array('none','Square, 20ft x 20ft'),
-    array('none','Square, 30ft x 30ft'),
-    array('none','Square, 30ft x 30ft'),
-    array('none','Square, 40ft x 40ft'),
-    array('none','Square, 40ft x 40ft'),
-    array('none','Rectangular, 10ft x 20ft'),
-    array('none','Rectangular, 10ft x 20ft'),
-    array('none','Rectangular, 20ft x 30ft'),
-    array('none','Rectangular, 20ft x 30ft'),
-    array('none','Rectangular, 20ft x 40ft'),
-    array('none','Rectangular, 20ft x 40ft'),
-    array('none','Rectangular, 30ft x 40ft'),
-    array('none','Rectangular, 30ft x 40ft'),
-    array('unusual_shape','The room is an unusual shape.'),
-    array('unusual_shape','The room is an unusual shape.'),
-    array('unusual_shape','The room is an unusual shape.'),
+    array('none'=>'The room is Square, 10ft x 10ft'),
+    array('none'=>'The room is Square, 10ft x 10ft'),
+    array('none'=>'The room is Square, 20ft x 20ft'),
+    array('none'=>'The room is Square, 20ft x 20ft'),
+    array('none'=>'The room is Square, 30ft x 30ft'),
+    array('none'=>'The room is Square, 30ft x 30ft'),
+    array('none'=>'The room is Square, 40ft x 40ft'),
+    array('none'=>'The room is Square, 40ft x 40ft'),
+    array('none'=>'The room is Rectangular, 10ft x 20ft'),
+    array('none'=>'The room is Rectangular, 10ft x 20ft'),
+    array('none'=>'The room is Rectangular, 20ft x 30ft'),
+    array('none'=>'The room is Rectangular, 20ft x 30ft'),
+    array('none'=>'The room is Rectangular, 20ft x 40ft'),
+    array('none'=>'The room is Rectangular, 20ft x 40ft'),
+    array('none'=>'The room is Rectangular, 30ft x 40ft'),
+    array('none'=>'The room is Rectangular, 30ft x 40ft'),
+    array('unusual_shape'=>'The room is an unusual shape.'),
+    array('unusual_shape'=>'The room is an unusual shape.'),
+    array('unusual_shape'=>'The room is an unusual shape.'),
   );
 
   return $data[rand(0,19)];
@@ -447,7 +447,8 @@ function room_shape(){
 function room()
 {
   $size = room_shape();
-  if(key($size) == 'unusual_shape'){
+
+  if(key($size) === 'unusual_shape'){
     $size = unusual_shape();
   }
 

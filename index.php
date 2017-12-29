@@ -455,6 +455,25 @@ function room()
     return $size;
 };
 
+function numberofexits(){
+
+$data = array(
+
+  array('none'=>'1'),
+  array('none'=>'1'),
+  array('none'=>'1'),
+  array('none'=>'2'),
+  array('none'=>'2'),
+  array('none'=>'2'),
+  array('none'=>'3'),
+  array('none'=>'3'),
+  array('none'=>'3'),
+  array('none'=>'4'),
+  array('none'=>'4'),
+  array('none'=>'4')
+
+);
+}
 function traps()
 {
     $data = array(
